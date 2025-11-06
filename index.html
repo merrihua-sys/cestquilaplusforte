@@ -21,7 +21,7 @@
       background: #fff;
       border-radius: 1.5rem;
       box-shadow: 0 16px 40px rgba(0,0,0,0.08);
-      max-width: 640px;
+      max-width: 680px;
       width: 100%;
       text-align: center;
       padding: 2.5rem 2rem 2rem;
@@ -33,15 +33,29 @@
       color: #ff6b4a;
       margin-bottom: 1rem;
     }
+    .photo-wrapper {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 1.5rem;
+    }
+    .photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 9999px;
+      border: 4px solid #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      background: #ffe1cc;
+    }
     .hero {
       font-size: clamp(2.4rem, 5vw, 3rem);
       font-weight: 700;
       margin-bottom: 1rem;
     }
     .from-merri {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       margin: 1.5rem 0 1rem;
-      line-height: 1.5;
+      line-height: 1.6;
     }
     .quote {
       margin-top: 1.5rem;
@@ -64,6 +78,11 @@
 <body>
   <div class="card">
     <h1>cestquilaplusforte.com</h1>
+
+    <div class="photo-wrapper">
+      <img src="" alt="Aurore">
+    </div>
+
     <div class="hero">C'est Aurore !</div>
     <p class="from-merri" id="merri"></p>
     <div class="quote" id="quote"></div>
@@ -72,39 +91,95 @@
   </div>
 
   <script>
-    // Messages perso de toi
+    // Messages perso
     const merriMessages = [
       "Tu es exactement là où tu dois être. Continue.",
       "Je vois tes efforts. Ils paient. Ne lâche pas.",
-      "Ta façon de tenir debout m'inspire chaque jour.",
+      "Même quand tu doutes, moi je ne doute pas de toi.",
       "Tu as le droit de te reposer sans douter de ta valeur.",
+      "Ce que tu portes est plus grand que ta fatigue du jour.",
+      "Ta façon de tenir debout m'inspire chaque jour.",
       "Tu peux viser haut. Tu en as les moyens.",
       "Ton énergie change une pièce. Ne minimise jamais ça.",
-      "Même les jours gris tu restes lumineuse."
+      "Tu fais partie des personnes qui relèvent les autres.",
+      "Je suis fier de toi, pas de ce que tu produis.",
+      "Aujourd'hui tu fais un petit pas. C'est assez.",
+      "Ta douceur et ta force ne sont pas contradictoires.",
+      "Tu n'es pas obligée d'être parfaite pour être puissante.",
+      "Tu peux être ambitieuse et indulgente avec toi même.",
+      "Ce monde a besoin de ta façon de voir les choses.",
+      "Tu n'as pas besoin d'autorisation pour briller.",
+      "Même fatiguée tu restes impressionnante.",
+      "Tu as déjà traversé pire. Tu vas gérer.",
+      "Fais confiance au temps. Tu pousses déjà.",
+      "Ton yoga intérieur est plus fort que le bruit extérieur.",
+      "Respire. Ton corps sait faire.",
+      "Ta présence est un cadeau pour les autres.",
+      "Tu as le droit de prendre toute la place.",
+      "Tu n'es pas seule. Je suis là.",
+      "Ce projet est à ta taille.",
+      "Tu es solide et douce. C'est rare.",
+      "Tu es en train de devenir la version que tu voulais.",
+      "Merci d'être toi.",
+      "Je t'aime fort et je crois en toi."
     ];
 
-    // Citations réelles ou attribuables
+    // Citations
     const quotes = [
-      { text: "Le succès est la somme de petits efforts répétés jour après jour.", author: "Robert Collier" },
+      { text: "Le corps est ton temple. Prends en soin pour que ton âme y réside.", author: "B.K.S. Iyengar" },
+      { text: "Le yoga permet de découvrir un sentiment d'équilibre et d'harmonie.", author: "B.K.S. Iyengar" },
+      { text: "Commence là où tu es. Utilise ce que tu as. Fais ce que tu peux.", author: "esprit yoga" },
+      { text: "Le succès n'est pas final, l'échec n'est pas fatal, c'est le courage de continuer qui compte.", author: "Winston Churchill" },
+      { text: "Agir avec audace c'est déjà réussir à moitié.", author: "inspiré de Churchill" },
+      { text: "Toute ma vie je me suis fait une certaine idée de la France... fais toi une certaine idée de toi.", author: "librement inspiré de Charles de Gaulle" },
+      { text: "Il n'y a qu'une fatalité, celle des peuples qui n'ont plus assez de force pour se tenir debout.", author: "Charles de Gaulle" },
+      { text: "On ne naît pas femme, on le devient.", author: "Simone de Beauvoir" },
+      { text: "Je ne suis pas libre tant qu'une seule femme est prisonnière.", author: "Audre Lorde" },
+      { text: "Rien n'est plus puissant qu'une femme déterminée à se relever.", author: "inspiré" },
+      { text: "Je n'ai pas peur et vous ne devez pas avoir peur non plus.", author: "Alexeï Navalny" },
+      { text: "Le mal gagne quand les gens cessent de résister.", author: "inspiré de Navalny" },
+      { text: "La discipline est le pont entre les objectifs et leur réalisation.", author: "Jim Rohn" },
       { text: "Ils ne savaient pas que c'était impossible alors ils l'ont fait.", author: "Mark Twain" },
       { text: "La plus grande gloire n'est pas de ne jamais tomber mais de se relever à chaque chute.", author: "Confucius" },
-      { text: "La détermination d'aujourd'hui prépare la force de demain.", author: "Anonyme" },
-      { text: "Ce que tu penses, tu le deviens. Ce que tu ressens, tu l'attires. Ce que tu imagines, tu le crées.", author: "Bouddha" },
-      { text: "La discipline est le pont entre les objectifs et leur réalisation.", author: "Jim Rohn" },
+      { text: "Ce que tu penses, tu le deviens. Ce que tu ressens, tu l'attires. Ce que tu imagines, tu le crées.", author: "attribué à Bouddha" },
+      { text: "Tu m'oublieras... mais pas aujourd'hui.", author: "clin d'oeil Larusso" },
+      { text: "Sans contrefaçon je suis toi même quand tu doutes.", author: "clin d'oeil Mylène Farmer" },
+      { text: "Le succès est la somme de petits efforts répétés jour après jour.", author: "Robert Collier" },
       { text: "Le courage n'est pas l'absence de peur mais la capacité de la vaincre.", author: "Nelson Mandela" },
-      { text: "Le yoga n'est pas d'atteindre une posture. C'est d'atteindre ton toi intérieur.", author: "Anonyme" }
+      { text: "Avance avec détermination et douceur, c'est compatible.", author: "Anonyme" },
+      { text: "L'espoir est la chose la plus difficile à tuer.", author: "Anonyme" }
+    ];
+
+    // Photos dans le même dossier que index.html
+    const photos = [
+      "1B4C0582-280C-4296-98FF-DDFC9D445459_4_5005_c.jpeg",
+      "26FC9905-56D8-4A64-85AA-8BC4E5A17BB3_1_102_o.jpeg",
+      "270EB87C-6F34-4AF3-AF0F-10F79BF77D91_1_105_c.jpeg",
+      "57ADE7CC-45E2-42D9-8F3B-772C8D5861C9_1_105_c.jpeg",
+      "6284C838-A943-4FEB-9D64-3DDD3A5921DC_1_105_c.jpeg",
+      "673FB546-BE49-4A6D-8D18-8AF80D699D53_1_105_c.jpeg",
+      "7A25D87B-BF3D-4F00-84F0-806699D7F2F1_1_105_c.jpeg",
+      "7A8852AD-1B83-4BBF-A887-0B2B5CE13EB4_1_105_c.jpeg",
+      "801B69A7-7AEB-4585-83D1-E005C5CD1CE5_1_105_c.jpeg",
+      "8A32BC11-DB7C-45C4-A396-DC498B758BAF_1_105_c.jpeg",
+      "D649D705-7F2C-4930-B1F2-03458E51065F_1_105_c.jpeg",
+      "E98F36D2-96B9-4CEB-96B7-2406F3370585_4_5005_c.jpeg"
     ];
 
     function pickRandom(arr) {
       return arr[Math.floor(Math.random() * arr.length)];
     }
 
+    // Tirages
     const merri = pickRandom(merriMessages);
     const quoteObj = pickRandom(quotes);
+    const randomPhoto = pickRandom(photos);
 
+    // Affichage
     document.getElementById("merri").textContent = merri;
     document.getElementById("quote").textContent = "“" + quoteObj.text + "”";
     document.getElementById("author").textContent = quoteObj.author;
+    document.querySelector(".photo-wrapper img").src = randomPhoto;
   </script>
 </body>
 </html>
