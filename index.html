@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>cestquilaplusforte.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #fff7f1 0%, #ffe1cc 50%, #ffffff 100%);
+      color: #222;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 1.5rem;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+      max-width: 640px;
+      width: 100%;
+      text-align: center;
+      padding: 2.5rem 2rem 2rem;
+    }
+    h1 {
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ff6b4a;
+      margin-bottom: 1rem;
+    }
+    .hero {
+      font-size: clamp(2.4rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .from-merri {
+      font-size: 1.1rem;
+      margin: 1.5rem 0 1rem;
+      line-height: 1.5;
+    }
+    .quote {
+      margin-top: 1.5rem;
+      font-style: italic;
+      color: #555;
+      line-height: 1.5;
+    }
+    .author {
+      margin-top: 0.5rem;
+      font-weight: 600;
+      color: #333;
+    }
+    .refresh-hint {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>cestquilaplusforte.com</h1>
+    <div class="hero">C'est Aurore !</div>
+    <p class="from-merri" id="merri"></p>
+    <div class="quote" id="quote"></div>
+    <div class="author" id="author"></div>
+    <div class="refresh-hint">Rafraîchis la page pour un nouveau message 💛</div>
+  </div>
+
+  <script>
+    // Messages perso de toi
+    const merriMessages = [
+      "Tu es exactement là où tu dois être. Continue.",
+      "Je vois tes efforts. Ils paient. Ne lâche pas.",
+      "Ta façon de tenir debout m'inspire chaque jour.",
+      "Tu as le droit de te reposer sans douter de ta valeur.",
+      "Tu peux viser haut. Tu en as les moyens.",
+      "Ton énergie change une pièce. Ne minimise jamais ça.",
+      "Même les jours gris tu restes lumineuse."
+    ];
+
+    // Citations réelles ou attribuables
+    const quotes = [
+      { text: "Le succès est la somme de petits efforts répétés jour après jour.", author: "Robert Collier" },
+      { text: "Ils ne savaient pas que c'était impossible alors ils l'ont fait.", author: "Mark Twain" },
+      { text: "La plus grande gloire n'est pas de ne jamais tomber mais de se relever à chaque chute.", author: "Confucius" },
+      { text: "La détermination d'aujourd'hui prépare la force de demain.", author: "Anonyme" },
+      { text: "Ce que tu penses, tu le deviens. Ce que tu ressens, tu l'attires. Ce que tu imagines, tu le crées.", author: "Bouddha" },
+      { text: "La discipline est le pont entre les objectifs et leur réalisation.", author: "Jim Rohn" },
+      { text: "Le courage n'est pas l'absence de peur mais la capacité de la vaincre.", author: "Nelson Mandela" },
+      { text: "Le yoga n'est pas d'atteindre une posture. C'est d'atteindre ton toi intérieur.", author: "Anonyme" }
+    ];
+
+    function pickRandom(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    const merri = pickRandom(merriMessages);
+    const quoteObj = pickRandom(quotes);
+
+    document.getElementById("merri").textContent = merri;
+    document.getElementById("quote").textContent = "“" + quoteObj.text + "”";
+    document.getElementById("author").textContent = quoteObj.author;
+  </script>
+</body>
+</html>
